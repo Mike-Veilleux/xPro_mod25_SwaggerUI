@@ -97,6 +97,6 @@ app.delete(('/users/:deleteById'), (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Running on http://localhost:3000')
+app.listen(3010, () => {
+    console.log('Running on http://localhost:3010')
 })
