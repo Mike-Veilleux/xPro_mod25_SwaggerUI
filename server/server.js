@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
 const swaggerDocument = require('./swagger.json');
 const swaggerUI = require('swagger-ui-express');
@@ -24,7 +25,7 @@ const users = [
     }
 ]
 
-
+app.use(cors());
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
@@ -97,6 +98,6 @@ app.delete(('/users/:deleteById'), (req, res) => {
 })
 
 
-app.listen(3010, () => {
-    console.log('Running on http://localhost:3010')
+app.listen(443, () => {
+    console.log(`Running on http://localhost:${443}`)
 })
